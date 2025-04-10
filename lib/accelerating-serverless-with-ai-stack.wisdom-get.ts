@@ -55,7 +55,7 @@ export const handler: APIGatewayProxyHandler = async () => {
       }
     );
 
-    const wisdom = response.data.choices[0].message.content.trim();
+    const wisdom = response.data.choices[0].message.content.trim().replace(/"/g, "");
 
     return {
       statusCode: 200,
